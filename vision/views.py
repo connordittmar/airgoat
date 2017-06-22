@@ -2,10 +2,11 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
 from .models import Target
 
 def index(request):
-    return HttpResponse("Vision Index Page Placeholder.")
+    return render(request, 'vision/index.html')
 
 def target_view(request, target_id):
     return HttpResponse("Looking at target %s." % target_id)
