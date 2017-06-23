@@ -7,6 +7,9 @@ class GpsPosition(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
 
+class CamUrl(models.Model):
+    camurl = models.TextField(default='http://169.254.171.248/mjpg/video.mjpg', blank=True)
+    
 class Target(models.Model):
     target_type = models.TextField(default='standard', blank=True)
     location = models.ForeignKey(GpsPosition, null=True, blank=True)

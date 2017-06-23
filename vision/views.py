@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Target
+from .models import Target, CamUrl
 
 def index(request):
     return render(request, 'vision/index.html')
@@ -18,7 +18,9 @@ def targets(request):
     return render(request, 'vision/targets.html', context)
 
 def cam_stream_view(request):
-    return render(request, 'vision/stream.html')
+    camurl = CamUrl.objects.get(id=1)
+    context = {'camurl': camurl.camurl}
+    return render(request, 'vision/stream.html', context)
 
 def improcess(request):
     return render(request, 'vision/improcess.html')
