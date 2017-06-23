@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'logs.apps.LogsConfig',
     'vision.apps.VisionConfig',
     'django.contrib.admin',
     'django.contrib.auth',
