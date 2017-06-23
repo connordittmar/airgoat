@@ -17,6 +17,8 @@ def targets(request):
     context = {'targets_list': targets_list}
     return render(request, 'vision/targets.html', context)
 
-def axis_cam_view(request):
-    return render(request, 'vision/axiscam.html')
-# Create your views here.
+def cam_stream_view(request):
+    return render(request, 'vision/stream.html')
+
+def improcess(request):
+    return render(request, 'vision/improcess.html')
