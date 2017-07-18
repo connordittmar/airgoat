@@ -21,11 +21,17 @@ title="Toggle Nav Menu"><i class="fa fa-bars"></i></a>
 <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px" id="home">
     {% if target %}
     <h2>TARGET #{{target.id}} OVERVIEW</h2>
-    <p class="w3-justify w3-center">Position: {{target.latitude}},{{target.longitude}}
-        Orientation: {{target.orientation}}
-        Shape: {{target.shape}}
-        Background_color: {{target.background_color}}
-    </p>
+    <ul class="w3-justify w3-center w3-list">
+        <li>Target Type: {{target.target_type}}</li>
+        <li>Position: {{target.latitude}},{{target.longitude}}</li>
+        <li>Orientation: {{target.orientation}}</li>
+        <li>Shape: {{target.shape}}</li>
+        <li>Background Color: {{target.background_color}}</li>
+        <li>Alphanumeric: {{target.alphanumeric}}</li>
+        <li>Alphanumeric Color: {{target.alphanumeric_color}}</li>
+        <li>Description: {{target.description}}</li>
+        <li>Thumbnail:<img src="{{target.id}}"></li>
+    </ul>
     {% else %}
     <p>TARGET DOES NOT EXIST</p>
     {% endif %}
